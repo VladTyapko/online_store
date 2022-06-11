@@ -1,0 +1,58 @@
+html ,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.wrap{
+    width: 100%;
+    height: 100%;
+}
+.admin-sgn{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#input-sgn{
+    outline: none;
+    border: 1px solid #D46A6A;
+    border-radius: 5px;
+    height: 25px;
+    width: 200px;
+}
+.admin-sgn p{
+    font-size: 18px;
+    color: #333;
+}
+.admin-sgn button{
+    margin-top: 30px;
+    outline: none;
+    height: 25px;
+    width: 160px;
+    border: none;
+    background-color: #D04242;
+    color: #Fff;
+}
+.wrap-pages{
+    width: 90%;
+    margin: auto;
+}
+#form-1, #form-2{
+    background-color: #E9E9E9;
+    padding:20px;
+}
+input{
+    outline: none;
+}
+#btn{
+    margin-top: 10px;
+    width: 280px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellowgreen;
+    color: #fff;
+    border: none;
+}

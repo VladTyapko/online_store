@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% load cart %}
+
+{% block content %}
+    <div class="wrap-card-tovar">
+        {% for product in products %}
+            <div class="card-tovar">
+                <div class="img-tovar">
+                    <img src="{{ product.get_image }}" alt="{{ product.name }}" width="150">
+                </div>
+                <div class="text-opinion">
+                    <div class="block-btn-delete">
+                        <h4>{{ product.name }}</h4>
+                        <a href="{% url 'categories:delete-product' product.pk %}"><span id="delete">&#215;	</span></a>
+                    </div>
+                    <p id="opinion">
+                        {{ product.description }}
+                    </p>
+                    <p id="price">
+                        <span>ціна: {{ product.price }} грн</span>
+                    </p>
+                    <p id="price">
+                        <span>кількість: {% count_product request product.pk %} шт.</span>
+                    </p>
+                </div>
+            </div>
+        {% empty %}
+            В корзині відсутні товари
+        {% endfor %}
+        {% if products %}
+            <div class="price">
+                <span>Ціна: {{ total_price }} грн</span>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+
+    {% if products %}
+        <a href="{% url 'orders:create' %}" id="btn-form">Оформити замовлення</a>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load sorting %}
+
+{% block content %}
+    <div class="wrap-card-tovar">
+        {% if products %}
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Сортувати за</th>
+                    <th scope="col"></th>
+
+                    {% trans "Назва" context "Product list table header" as label %}
+                    {% sorting_header 'name' label %}
+
+
+                    {% trans "Ціна" context "Product list table header" as label %}
+                    {% sorting_header 'price' label %}
+
+
+                    {% trans "Вага" context "Product list table header" as label %}
+                    {% sorting_header 'weight' label %}
+
+                    </tr>
+                </thead>
+            </table>
+        {% endif %}
+        {% for product in products %}
+            <div class="card-tovar">
+                <div class="img-tovar">
+                    <img src="{{ product.get_image }}" alt="{{ product.name }}" width="100">
+                </div>
+                <div class="text-opinion">
+                    <h4>{{ product.name }}</h4>
+                    <p id="opinion">
+                        Склад: {{ product.description }}
+                    </p>
+                    <p id="price">
+                        <span>ціна: {{ product.price }} грн</span> <span>вага: {{ product.weight }} грам</span>
+                        <a href="{% url 'categories:add-to-checkout' category.slug category.pk product.pk %}" class="btn" id="btn">Додати до замовлення</a>
+                    </p>
+                </div>
+            </div>
+        {% empty %}
+            <h1>Товари наразі відсутні</h1>
+        {% endfor %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        {% if products.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ products.previous_page_number }}{% if sort_by %}&sort_by={{ sort_by }}{% endif %}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {% for page_number in products.paginator.get_elided_page_range %}
+                            {% if page_number == page_obj.paginator.ELLIPSIS %}
+                                <li class="page-item disabled"><a class="page-link">{{page_number}}</a></li>
+                            {% else %}
+                                <li class="page-item {% if page_number == page_obj.number %}active{% endif %}"><a class="page-link" href="?page={{ page_number }}{% if sort_by %}&sort_by={{ sort_by }}{% endif %}">{{page_number}}</a></li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if products.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ products.next_page_number }}{% if sort_by %}&sort_by={{ sort_by }}{% endif %}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,128 @@
+
+.wrap-card-tovar{
+    width: 85%;
+    min-width: 320px;
+    margin: 40px auto;
+    padding-bottom: 40px;
+}
+.wrap-back, .wrap-card-tovar{
+    max-width: 720px;
+}
+.card-tovar{
+    background: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    display: flex;
+    min-height: 100px;
+    max-width: 720px;
+    margin: auto;
+    min-width: 300px;
+}
+.card-tovar+.card-tovar{
+    margin-top: 20px;
+}
+.img-tovar img{
+    width: 99px;
+    height: 98px;
+    border-radius: 5px;
+}
+.text-opinion{
+    margin-left: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.text-opinion #price{
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: flex;
+    align-items: center;
+}
+#btn{
+    background: #D14D4D;
+    border-radius: 5px;
+    color: #fff;
+    padding: 4px;
+    margin-right: 4px;
+}
+.text-opinion #opinion{
+    font-size: 12px;
+}
+.block-btn-delete{
+    display: flex;
+    justify-content: space-between;
+}
+#delete{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: -10px;
+    color: rgb(148, 53, 36);
+}
+.price{
+    min-width: 300px;
+    max-width: 720px;
+    margin: 20px auto;
+    background:#3CB156;
+    color: #fff;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#form{
+    min-width: 300px;
+    width: 100%;
+    max-width:720px;
+}
+#form input{
+    width: 100%;
+    outline: none;
+    padding: 5px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+#form textarea{
+    width: 100%;
+    outline: none;
+    padding: 5px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 125px;
+    margin-top: 5px;
+}
+#form select{
+    width: 100%;
+    outline: none;
+    padding: 5px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 35px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#btn-form{
+    width: 178px;
+    height: 21px;
+    background: #D87575;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 20px auto;
+    cursor: pointer;
+}

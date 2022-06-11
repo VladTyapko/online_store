@@ -1,0 +1,39 @@
+#modal-window{
+    position: fixed;
+    overflow: hidden;
+    width: 0%;
+    height: 100%;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: rgba(177, 173, 173, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    width: 250px;
+    background-color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 1px 5px 5px;
+}
+#thank{
+    color: rgba(180, 34, 34, 1);
+}
+#er{
+    color: #333;
+}
+span a{
+    text-decoration: none;
+    color: rgb(65, 101, 148);
+}
+#fone{
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.49);
+}
